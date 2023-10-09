@@ -5,16 +5,22 @@ public class Libro extends Escrito{
 	private String editorial;
 	private String edicion;
 	private String interpretacion;
-	
+	public Libro(String origen,String titulo,String autor,int paginas, String co,String editorial,String edicion,String inter) {
+		super(origen,titulo,autor,paginas);
+		this.co_autor=co;
+		this.editorial=editorial;
+		this.edicion=edicion;
+		this.interpretacion=inter;
+	}
 
-	public int palabrasTotales() {
-		return 1;
+	public int palabrasTotales(int palabrasPorPagina) {
+		return this.getPaginas()*palabrasPorPagina*2;
 	}
 	public String interpretacion() {
-		return "";
+		return this.interpretacion;
 	}
 	public String toString() {
-		return "";
+		return this.getOrigen()+"\n"+this.getTitulo()+"\n"+this.getAutor()+"\n"+this.getPaginas()+"\n"+this.getCo_autor()+"\n"+this.getEditorial()+"\n"+this.getEdicion();
 	}
 	public String getCo_autor() {
 		return this.co_autor;
