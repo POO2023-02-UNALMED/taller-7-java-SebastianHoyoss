@@ -18,7 +18,7 @@ public class Alfabeto extends Pictograma {
 	public String toString() {
 		String alfabeto="";
 		for (String letra:letras) {
-			if(letra.equals("z")) {
+			if(letra.equals("Z")) {
 				alfabeto+=letra;
 			}
 			else {
