@@ -1,18 +1,25 @@
 package comunicacion;
 
-public class Periodico {
+public class Periodico extends Escrito {
 	private String fecha;
 	private String primicia;
 	private String interpretacion;
 	
-	public int palabrasTotales() {
-		return 1;
+	public Periodico(String origen,String titulo,String autor,int paginas, String fecha,String primicia,String inter) {
+		super(origen,titulo,autor,paginas);
+		this.fecha=fecha;
+		this.primicia=primicia;
+		this.interpretacion=inter;
+	}
+
+	public int palabrasTotales(int palabrasPorPagina) {
+		return this.getPaginas()*palabrasPorPagina*10;
 	}
 	public String interpretacion() {
-		return "";
+		return this.interpretacion;
 	}
 	public String toString() {
-		return "";
+		return this.getOrigen()+"\n"+this.getTitulo()+"\n"+this.getAutor()+"\n"+this.getPaginas()+"\n"+this.getFecha()+"\n"+this.getPrimicia();
 	}
 	public String getFecha() {
 		return this.fecha;
